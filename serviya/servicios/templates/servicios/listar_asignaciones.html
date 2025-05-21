@@ -1,0 +1,31 @@
+{% extends 'servicios/base.html' %}
+
+{% block title %}Listado de Asignaciones{% endblock %}
+
+{% block content %}
+    <h1>Asignaciones de Servicios</h1>
+    {% if asignaciones %}
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Servicio</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asignacion in asignaciones %}
+                    <tr>
+                        <td>{{ asignacion.usuario.nombre }}</td>
+                        <td>{{ asignacion.servicio.nombre }}</td>
+                        <td>{{ asignacion.fecha|date:"d/m/Y H:i" }}</td>
+                        <td>{{ asignacion.get_estado_display }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay asignaciones registradas.</p>
+    {% endif %}
+{% endblock %}

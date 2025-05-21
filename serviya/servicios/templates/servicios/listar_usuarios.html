@@ -1,0 +1,31 @@
+{% extends 'servicios/base.html' %}
+
+{% block title %}Listado de Usuarios{% endblock %}
+
+{% block content %}
+<h1>Listado de Usuarios</h1>
+
+{% if usuarios %}
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.telefono }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No hay usuarios registrados.</p>
+{% endif %}
+
+<p><a href="{% url 'crear_usuario' %}">Crear nuevo usuario</a></p>
+<p><a href="{% url 'home' %}">Volver al inicio</a></p>
+{% endblock %}

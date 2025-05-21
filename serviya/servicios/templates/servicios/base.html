@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Gestión Servicios{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Inicio</a> |
+        <a href="{% url 'crear_usuario' %}">Crear Usuario</a> |
+        <a href="{% url 'crear_servicio' %}">Crear Servicio</a> |
+        <a href="{% url 'asignar_servicio' %}">Asignar Servicio</a> |
+        <a href="{% url 'listar_asignaciones' %}">Ver Asignaciones</a>
+    </nav>
+    <hr>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
