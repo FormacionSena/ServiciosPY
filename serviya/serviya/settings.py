@@ -78,9 +78,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'serviya',
         'USER': 'root',
-        'PASSWORD': 'Omar2025',
+        'PASSWORD': '123456',
         'HOST': 'localhost',
-        'PORT': '3308',
+        'PORT': '3307',
     }
 }
 
